@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import DatePicker from './componets/DatePicker/DatePicker'
+import { useState } from "react";
+import "./App.css";
+import { DatePicker } from "./componets/DatePicker/DatePicker";
+import { dateFormatting } from "./helpers/formatDate";
+
+const currentDate = dateFormatting(new Date());
 
 function App() {
+  const [selectedDate, setSelectedDate] = useState(currentDate);
+
+  const getDate = (date) => {
+    // const formattedDate = dateFormatting(date);
+    setSelectedDate(date);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DatePicker getDate={getDate} />;<p>Date :{selectedDate}</p>
+    </>
   );
 }
 
