@@ -5,20 +5,20 @@ import "./App.css";
 import { DatePicker } from "./componets/DatePicker/DatePicker";
 import { StatisticalList } from "./componets/StattisticalList/StattisticalList";
 import { formatDate } from "./helpers/formatDate";
-import { getAllStatistic } from "./services/statistical-api";
+import { getDateStatistic } from "./services/statistical-api";
 
 const currentDate = formatDate(new Date());
 
 function App() {
   const [selectedDate, setSelectedDate] = useState(currentDate);
   useEffect(() => {
-    getStatictic();
-  }, []);
+    getStatictic(selectedDate);
+  }, [selectedDate]);
 
-  const getStatictic = async () => {
+  const getStatictic = async (date) => {
     try {
-      const data = getAllStatistic();
-      // console.log(data);
+      const data = await getDateStatistic(date);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }

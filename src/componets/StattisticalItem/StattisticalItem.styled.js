@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Item = styled.p`
+export const Item = styled.li`
   display: flex;
   background-color: blue;
 `;
