@@ -5,6 +5,10 @@ export const Item = styled.li`
   background-color: blue;
 `;
 
+export const Icon = styled.img`
+  width: 50px;
+`;
+
 export const Statistic = styled.p`
   clolr: red;
   font-size: 36px;

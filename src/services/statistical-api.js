@@ -8,3 +8,9 @@ export const getDateStatistic = async (date) => {
   return data;
   // console.log(response.data.data);
 };
+
+export const getTerms = async (lang) => {
+  const response = await axios.get(`/terms/${lang}`);
+  const { data } = response.data;
+  return data;
+};

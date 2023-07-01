@@ -1,12 +1,18 @@
 import { StatisticalItem } from "../StattisticalItem/StattisticalItem";
 import { List } from "./StattisticalList.styled";
 
-export const StatisticalList = ({ data }) => {
+export const StatisticalList = ({ terms, statistic }) => {
+  console.log(terms);
+
   return (
     <List>
-      {/* {data.map((item) => ( */}
-        <StatisticalItem />
-      {/* ))} */}
+      {Object.keys(terms).map((key) => (
+        <StatisticalItem
+          key={key}
+          title={terms[key].title}
+          icon={terms[key].icon}
+        />
+      ))}
     </List>
   );
 };

@@ -1,0 +1,18 @@
+
+const terms={} 
+
+
+const statistic={aa_warfare_systems:389,
+armoured_fighting_vehicles:7868,
+artillery_systems:4162,
+atgm_srbm_systems:4,
+cruise_missiles:1261,
+helicopters:308,
+mlrs:632,
+personnel_units:228870,
+planes:315,
+special_military_equip:580,
+tanks:4042,
+uav_systems:3545,
+vehicles_fuel_tanks:6794,
+warships_cutters:18}

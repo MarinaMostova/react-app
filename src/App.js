@@ -5,24 +5,39 @@ import "./App.css";
 import { DatePicker } from "./componets/DatePicker/DatePicker";
 import { StatisticalList } from "./componets/StattisticalList/StattisticalList";
 import { formatDate } from "./helpers/formatDate";
-import { getDateStatistic } from "./services/statistical-api";
+import { getDateStatistic, getTerms } from "./services/statistical-api";
 
 const currentDate = formatDate(new Date());
 
 function App() {
   const [selectedDate, setSelectedDate] = useState(currentDate);
+  const [terms, setTerms] = useState({});
+  const [statistic, setStatistic] = useState({});
+
   useEffect(() => {
+    getAllTerms("ua");
     getStatictic(selectedDate);
   }, [selectedDate]);
 
   const getStatictic = async (date) => {
     try {
       const data = await getDateStatistic(date);
-      console.log(data);
+      setStatistic(data);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const getAllTerms = async (lang) => {
+    try {
+      const data = await getTerms(lang);
+      setTerms(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // console.log(terms);
+  console.log(statistic.stats);
 
   const getDate = (date) => {
     const formattedDate = formatDate(date);
@@ -33,7 +48,7 @@ function App() {
     <>
       <DatePicker getDate={getDate} />
       <p>Date :{selectedDate}</p>
-      <StatisticalList />
+      <StatisticalList terms={terms} statistic={statistic.stats} />
     </>
   );
 }
