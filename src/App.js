@@ -4,6 +4,8 @@ import "./App.css";
 
 import { DatePicker } from "./componets/DatePicker/DatePicker";
 import { StatisticalList } from "./componets/StattisticalList/StattisticalList";
+import { PageContainer } from "./componets/PageContainer/PageContainer";
+
 import { formatDate } from "./helpers/formatDate";
 import { getDateStatistic, getTerms } from "./services/statistical-api";
 
@@ -37,7 +39,7 @@ function App() {
     }
   };
   // console.log(terms);
-  console.log(statistic.stats);
+  console.log(statistic);
 
   const getDate = (date) => {
     const formattedDate = formatDate(date);
@@ -46,9 +48,11 @@ function App() {
 
   return (
     <>
-      <DatePicker getDate={getDate} />
-      <p>Date :{selectedDate}</p>
-      <StatisticalList terms={terms} statistic={statistic.stats} />
+      <PageContainer>
+        <DatePicker getDate={getDate} />
+        <p>Date :{selectedDate}</p>
+        <StatisticalList terms={terms} statistic={statistic.stats} />
+      </PageContainer>
     </>
   );
 }

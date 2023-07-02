@@ -2,7 +2,11 @@ import { StatisticalItem } from "../StattisticalItem/StattisticalItem";
 import { List } from "./StattisticalList.styled";
 
 export const StatisticalList = ({ terms, statistic }) => {
-  console.log(terms);
+  for (const key in terms) {
+    if (statistic.hasOwnProperty(key)) {
+      terms[key].stats = statistic[key];
+    }
+  }
 
   return (
     <List>
@@ -11,6 +15,7 @@ export const StatisticalList = ({ terms, statistic }) => {
           key={key}
           title={terms[key].title}
           icon={terms[key].icon}
+          stats={terms[key].stats}
         />
       ))}
     </List>

@@ -1,11 +1,19 @@
-import { Item, Icon, Statistic, Title } from "./StattisticalItem.styled";
+import {
+  Item,
+  Icon,
+  Wrapper,
+  Statistic,
+  Title,
+} from "./StattisticalItem.styled";
 
-export const StatisticalItem = ({ title, icon }) => {
+export const StatisticalItem = ({ title, icon, stats }) => {
   return (
     <Item>
       <Icon src={icon} />
-      <Title>{title} </Title>
-      <Statistic>1000000 </Statistic>
+      <Wrapper>
+        <Title>{title} </Title>
+        <Statistic>{stats} </Statistic>
+      </Wrapper>
     </Item>
   );
 };
