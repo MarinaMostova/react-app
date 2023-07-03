@@ -1,4 +1,4 @@
-import { css, keyframes } from "styled-components";
+import { keyframes } from "styled-components";
 import styled from "styled-components";
 
 export const Item = styled.li`
@@ -55,9 +55,7 @@ export const Icon = styled.img`
   `}
 `;
 
-export const Wrapper = styled.div`
-  // position: relative;
-`;
+export const Wrapper = styled.div``;
 
 export const Statistic = styled.p`
   font-size: 36px;
@@ -81,10 +79,8 @@ const explodeAnimation = keyframes`
 
 export const Explosion = styled.img`
   position: absolute;
-  top: 20%;
-  // left: 20px;
+  top: 15%;
   left: 5%;
-
   transform: translate(-50%, -50%);
   width: 100px;
   height: 100px;

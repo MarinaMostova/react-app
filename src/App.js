@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { subDays } from "date-fns";
 
 import "./App.css";
 
@@ -18,15 +19,22 @@ function App() {
   const [terms, setTerms] = useState({});
   const [statistic, setStatistic] = useState({});
 
+  console.log(selectedDate);
+
   useEffect(() => {
     getAllTerms("ua");
-    getStatictic(selectedDate);
+  }, []);
+
+  useEffect(() => {
+    getStatistic(selectedDate);
   }, [selectedDate]);
 
-  const getStatictic = async (date) => {
+  const getStatistic = async (date) => {
     try {
       const data = await getDateStatistic(date);
       setStatistic(data);
+      const prevDate = subDays(date, 1);
+      console.log(prevDate);
     } catch (error) {
       console.log(error);
     }
@@ -40,8 +48,6 @@ function App() {
       console.log(error);
     }
   };
-  // console.log(terms);
-  console.log(statistic);
 
   const getDate = (date) => {
     const formattedDate = formatDate(date);
