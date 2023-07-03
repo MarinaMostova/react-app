@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 import "./App.css";
 
-// import { DatePicker } from "./componets/DatePicker/DatePicker";
 import { Calendar } from "./componets/Calendar/Calendar";
-import { StatisticalList } from "./componets/StattisticalList/StattisticalList";
+import { StatisticalList } from "./componets/StatisticalList/StatisticalList";
 import { PageContainer } from "./componets/PageContainer/PageContainer";
 import { Header } from "./componets/Header/Header";
+import { Footer } from "./componets/Footer/Footer";
 
 import { formatDate } from "./helpers/formatDate";
 import { getDateStatistic, getTerms } from "./services/statistical-api";
@@ -40,8 +40,8 @@ function App() {
       console.log(error);
     }
   };
-  // // console.log(terms);
-  // console.log(statistic);
+  // console.log(terms);
+  console.log(statistic);
 
   const getDate = (date) => {
     const formattedDate = formatDate(date);
@@ -51,10 +51,11 @@ function App() {
   return (
     <>
       <PageContainer>
-        <Header date={selectedDate}>
+        <Header day={statistic.day}>
           <Calendar getDate={getDate} selectedDate={selectedDate} />
         </Header>
         <StatisticalList terms={terms} statistic={statistic.stats} />
+        <Footer />
       </PageContainer>
     </>
   );

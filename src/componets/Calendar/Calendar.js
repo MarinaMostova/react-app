@@ -1,5 +1,5 @@
 import { Container, Icon, StyledDatePicker } from "./Calendar.styled";
-import img from "../../images/calendar.svg";
+import img from "../../images/down.svg";
 
 import { uk } from "date-fns/locale";
 
@@ -21,7 +21,6 @@ export const Calendar = ({ getDate, selectedDate }) => {
           value={selectedDate}
           onChange={handleDateChange}
           locale={uk}
-          onChange={handleDateChange}
         />
         <Icon src={img} />
       </Container>

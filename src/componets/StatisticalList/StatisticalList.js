@@ -1,5 +1,5 @@
-import { StatisticalItem } from "../StattisticalItem/StattisticalItem";
-import { List } from "./StattisticalList.styled";
+import { StatisticalItem } from "../StatisticalItem/StatisticalItem";
+import { List } from "./StatisticalList.styled";
 
 export const StatisticalList = ({ terms, statistic }) => {
   for (const key in terms) {

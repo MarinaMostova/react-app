@@ -9,7 +9,6 @@ export const StyledDatePicker = styled(DatePicker)`
   border-radius: 10px;
   padding: 10px 15px;
   width: 210px;
-  // text-align: center;
   background-color: rgb(200, 214, 184, 0.8);
   cursor: pointer;
   position: relative;
@@ -18,11 +17,12 @@ export const StyledDatePicker = styled(DatePicker)`
 export const Container = styled.div`
   position: relative;
   display: inline-flex;
+
 `;
 
 export const Icon = styled.img`
   position: absolute;
-  top: 15px;
+  top: 20px;
   right: 15px;
-  width: 30px;
+  width: 20px;
 `;
