@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 
 import "./App.css";
 
-import { DatePicker } from "./componets/DatePicker/DatePicker";
+// import { DatePicker } from "./componets/DatePicker/DatePicker";
+import { Calendar } from "./componets/Calendar/Calendar";
 import { StatisticalList } from "./componets/StattisticalList/StattisticalList";
 import { PageContainer } from "./componets/PageContainer/PageContainer";
+import { Header } from "./componets/Header/Header";
 
 import { formatDate } from "./helpers/formatDate";
 import { getDateStatistic, getTerms } from "./services/statistical-api";
@@ -38,8 +40,8 @@ function App() {
       console.log(error);
     }
   };
-  // console.log(terms);
-  console.log(statistic);
+  // // console.log(terms);
+  // console.log(statistic);
 
   const getDate = (date) => {
     const formattedDate = formatDate(date);
@@ -49,8 +51,9 @@ function App() {
   return (
     <>
       <PageContainer>
-        <DatePicker getDate={getDate} />
-        <p>Date :{selectedDate}</p>
+        <Header date={selectedDate}>
+          <Calendar getDate={getDate} selectedDate={selectedDate} />
+        </Header>
         <StatisticalList terms={terms} statistic={statistic.stats} />
       </PageContainer>
     </>
