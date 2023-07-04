@@ -62,6 +62,9 @@ export const Date = styled.span`
 `;
 
 export const Wrap = styled.div`
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
+  @media (min-width: 1010px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
