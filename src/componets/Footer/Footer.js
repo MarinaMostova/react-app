@@ -1,4 +1,12 @@
-import { FooterContainer, Icon, Text, Link } from "./Footer.styled";
+import {
+  FooterContainer,
+  Icon,
+  Text,
+  Link,
+  Marquee,
+  MarqueeBox,
+  Info,
+} from "./Footer.styled";
 import logo from "../../images/modlogo.svg";
 
 export const Footer = () => {
@@ -8,6 +16,12 @@ export const Footer = () => {
         <Icon src={logo} />
         <Text>Mіністерство оборони України</Text>
       </Link>
+      <MarqueeBox>
+        <Marquee>
+          <Info>Слава Україні! Героям Слава!</Info>
+          <Info>Росія - терорист!</Info>
+        </Marquee>
+      </MarqueeBox>
     </FooterContainer>
   );
 };

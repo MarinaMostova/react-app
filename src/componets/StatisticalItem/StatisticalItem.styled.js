@@ -8,7 +8,7 @@ export const Item = styled.li`
   align-items: center;
   width: 430px;
   border-radius: 15px;
-  padding: 15px;
+  padding: 10px;
   background-color: rgb(200, 214, 184, 0.8);
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -38,12 +38,20 @@ export const Icon = styled.img`
 export const Wrapper = styled.div``;
 
 export const Statistic = styled.p`
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
+
+  @media (min-width: 1010px) {
+    font-size: 28px;
+  }
 `;
 
 export const Title = styled.p`
-  font-size: 22px;
+  font-size: 18px;
+
+  @media (min-width: 1010px) {
+    font-size: 22px;
+  }
 `;
 
 const explodeAnimation = keyframes`

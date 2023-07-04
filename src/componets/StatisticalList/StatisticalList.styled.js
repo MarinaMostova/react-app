@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px;
   justify-content: center;
-  padding: 30px 0;
+  padding: 20px 0;
 
-  @media screen and (min-width: 860px) {
-    gap: 40px;
+  @media (min-width: 1010px) {
+    gap: 20px;
   }
 `;
