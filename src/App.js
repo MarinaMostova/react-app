@@ -8,6 +8,8 @@ import { StatisticalList } from "./componets/StatisticalList/StatisticalList";
 import { PageContainer } from "./componets/PageContainer/PageContainer";
 import { Header } from "./componets/Header/Header";
 import { Footer } from "./componets/Footer/Footer";
+import { Loader } from "./componets/Loader/Loader";
+import { Error } from "./componets/Error/Error";
 
 const date = getCurrentDate(new Date());
 
@@ -17,6 +19,8 @@ function App() {
   const [selectedDate, setSelectedDate] = useState(currentDate);
   const [terms, setTerms] = useState({});
   const [statistic, setStatistic] = useState({});
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getAllTerms("ua");
@@ -24,11 +28,14 @@ function App() {
   }, [selectedDate]);
 
   const getStatistic = async (date) => {
+    setIsLoading(true);
     try {
       const data = await getDateStatistic(date);
       setStatistic(data);
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -36,8 +43,10 @@ function App() {
     try {
       const data = await getTerms(lang);
       setTerms(data);
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -55,12 +64,16 @@ function App() {
           maxDate={currentDate}
         />
       </Header>
-      <StatisticalList
-        terms={terms}
-        statistic={statistic.stats}
-        increase={statistic.increase}
-      />
-      <Footer />
+      {isLoading && <Loader />}
+      {terms && statistic && (
+        <StatisticalList
+          terms={terms}
+          statistic={statistic.stats}
+          increase={statistic.increase}
+        />
+      )}
+      {error && <Error />}
+      {!error && <Footer />}
     </PageContainer>
   );
 }

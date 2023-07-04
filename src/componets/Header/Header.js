@@ -17,7 +17,7 @@ export const Header = ({ children, day }) => {
         <Text>
           за період з <Date>2022-02-24</Date> по {children}{" "}
         </Text>
-        <WarStatistic>{day}-й день війни</WarStatistic>
+        {day&&<WarStatistic>{day}-й день війни</WarStatistic>}
       </Wrap>
     </HeaderContainer>
   );
