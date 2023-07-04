@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-app/static/css/main.9ac8f2ca.css",
-    "main.js": "/react-app/static/js/main.e19e7044.js",
+    "main.js": "/react-app/static/js/main.d1aefb25.js",
     "static/js/787.b701888c.chunk.js": "/react-app/static/js/787.b701888c.chunk.js",
     "static/media/modlogo.svg": "/react-app/static/media/modlogo.01c99a4ebc7858ee20b1f34f4cf77066.svg",
     "static/media/bg.jpg": "/react-app/static/media/bg.c3420e23c22dd43fb4ac.jpg",
@@ -9,11 +9,11 @@
     "static/media/calendar.svg": "/react-app/static/media/calendar.19f6f3a26132dc4c094da1ad763840bd.svg",
     "index.html": "/react-app/index.html",
     "main.9ac8f2ca.css.map": "/react-app/static/css/main.9ac8f2ca.css.map",
-    "main.e19e7044.js.map": "/react-app/static/js/main.e19e7044.js.map",
+    "main.d1aefb25.js.map": "/react-app/static/js/main.d1aefb25.js.map",
     "787.b701888c.chunk.js.map": "/react-app/static/js/787.b701888c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9ac8f2ca.css",
-    "static/js/main.e19e7044.js"
+    "static/js/main.d1aefb25.js"
   ]
 }
