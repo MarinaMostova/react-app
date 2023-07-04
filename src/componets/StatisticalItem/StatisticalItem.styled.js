@@ -32,27 +32,7 @@ export const Icon = styled.img`
     isClicked &&
     `
     filter: drop-shadow(0px 0px 20px red);
-     animation: shake 500ms ease-in-out;
-
-    @keyframes shake {
-      0% {
-        transform: translateX(0);
-      }
-      25% {
-        transform: translateX(-5px);
-      }
-      50% {
-        transform: translateX(0);
-      }
-      75% {
-        transform: translateX(5px);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-  `}
+    `}
 `;
 
 export const Wrapper = styled.div``;
@@ -85,4 +65,9 @@ export const Explosion = styled.img`
   width: 100px;
   height: 100px;
   animation: ${explodeAnimation} 1s ease-in-out forwards;
+`;
+
+export const Wrap = styled.div`
+  display: flex;
+  gap: 15px;
 `;

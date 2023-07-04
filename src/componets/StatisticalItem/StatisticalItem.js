@@ -6,21 +6,16 @@ import {
   Statistic,
   Title,
   Explosion,
+  Wrap,
 } from "./StatisticalItem.styled";
-
 import explosionSvg from "../../images/explosion.svg";
 
-export const StatisticalItem = ({ title, icon, stats }) => {
+export const StatisticalItem = ({ title, icon, stats, increase }) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleIconClick = (event) => {
     if (isClicked) return;
     setIsClicked(true);
-
-    // setIsClicked(true);
-    // setTimeout(() => {
-    //   setIsClicked(false);
-    // }, 1000);
   };
   return (
     <Item>
@@ -28,7 +23,10 @@ export const StatisticalItem = ({ title, icon, stats }) => {
       <Icon src={icon} onClick={handleIconClick} isClicked={isClicked} />
       <Wrapper>
         <Title>{title} </Title>
-        <Statistic>{stats} </Statistic>
+        <Wrap>
+          <Statistic> {stats} </Statistic>
+          {increase > 0 && <Statistic>(+{increase})</Statistic>}
+        </Wrap>
       </Wrapper>
     </Item>
   );

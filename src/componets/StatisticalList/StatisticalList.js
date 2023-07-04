@@ -1,13 +1,7 @@
 import { StatisticalItem } from "../StatisticalItem/StatisticalItem";
 import { List } from "./StatisticalList.styled";
 
-export const StatisticalList = ({ terms, statistic }) => {
-  for (const key in terms) {
-    if (statistic.hasOwnProperty(key)) {
-      terms[key].stats = statistic[key];
-    }
-  }
-
+export const StatisticalList = ({ terms, statistic, increase }) => {
   return (
     <List>
       {Object.keys(terms).map((key) => (
@@ -15,7 +9,8 @@ export const StatisticalList = ({ terms, statistic }) => {
           key={key}
           title={terms[key].title}
           icon={terms[key].icon}
-          stats={terms[key].stats}
+          stats={statistic[key]}
+          increase={increase[key]}
         />
       ))}
     </List>
