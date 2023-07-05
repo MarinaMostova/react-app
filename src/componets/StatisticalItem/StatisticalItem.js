@@ -25,7 +25,7 @@ export const StatisticalItem = ({ title, icon, stats, increase }) => {
         <Title>{title} </Title>
         <Wrap>
           <Statistic> {stats} </Statistic>
-          {increase > 0 && <Statistic>(+{increase})</Statistic>}
+          {increase.length > 0 && <Statistic>(+{increase})</Statistic>}
         </Wrap>
       </Wrapper>
     </Item>
