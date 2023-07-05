@@ -1,6 +1,7 @@
 import { keyframes } from "styled-components";
 import styled from "styled-components";
 
+
 export const Item = styled.li`
   position: relative;
   display: flex;
@@ -16,16 +17,16 @@ export const Item = styled.li`
 
 export const Icon = styled.img`
   min-width: 140px;
-   transform: scale(1);
-     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-     cursor:crosshair;
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: crosshair;
 
   @media screen and (min-width: 480px) {
-   min -width: 200px;
+    min-width: 200px;
   }
 
-  &:hover{
-   transform: scale(1.2);
+  &:hover {
+    transform: scale(1.2);
   }
 
   ${({ isClicked }) =>

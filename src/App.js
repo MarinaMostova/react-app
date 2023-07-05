@@ -54,10 +54,16 @@ function App() {
     const formattedDate = formatDate(date);
     setSelectedDate(formattedDate);
   };
+  const { stats, increase, day } = statistic;
 
+  const isStatisticLoaded = Object.keys(statistic).length > 0;
+  const isTermsLoaded = Object.keys(terms).length > 0;
+
+  console.log(isStatisticLoaded);
+  console.log(isTermsLoaded);
   return (
     <PageContainer>
-      <Header day={statistic.day}>
+      <Header day={day}>
         <Calendar
           getDate={getDate}
           selectedDate={selectedDate}
@@ -65,12 +71,8 @@ function App() {
         />
       </Header>
       {isLoading && <Loader />}
-      {terms && statistic && (
-        <StatisticalList
-          terms={terms}
-          statistic={statistic.stats}
-          increase={statistic.increase}
-        />
+      {isTermsLoaded && isStatisticLoaded && (
+        <StatisticalList terms={terms} statistic={stats} increase={increase} />
       )}
       {error && <Error />}
       {!error && <Footer />}
