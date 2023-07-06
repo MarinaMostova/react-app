@@ -11,6 +11,7 @@ import {
 import explosionSvg from "../../images/explosion.svg";
 
 export const StatisticalItem = ({ title, icon, stats, increase }) => {
+  console.log(increase);
   const [isClicked, setIsClicked] = useState(false);
 
   const handleIconClick = (event) => {
@@ -25,7 +26,7 @@ export const StatisticalItem = ({ title, icon, stats, increase }) => {
         <Title>{title} </Title>
         <Wrap>
           <Statistic> {stats} </Statistic>
-          {increase.length > 0 && <Statistic>(+{increase})</Statistic>}
+          {increase>0 && <Statistic>(+{increase})</Statistic>}
         </Wrap>
       </Wrapper>
     </Item>

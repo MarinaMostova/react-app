@@ -2,6 +2,7 @@ import { StatisticalItem } from "../StatisticalItem/StatisticalItem";
 import { List } from "./StatisticalList.styled";
 
 export const StatisticalList = ({ terms, statistic, increase }) => {
+  console.log(increase);
   return (
     <List>
       {Object.keys(terms).map((key) => (

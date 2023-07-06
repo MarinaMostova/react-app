@@ -59,8 +59,7 @@ function App() {
   const isStatisticLoaded = Object.keys(statistic).length > 0;
   const isTermsLoaded = Object.keys(terms).length > 0;
 
-  console.log(isStatisticLoaded);
-  console.log(isTermsLoaded);
+  console.log(statistic.increase);
   return (
     <PageContainer>
       <Header day={day}>
